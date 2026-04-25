@@ -12,4 +12,6 @@ func main() {
 
 	log.Highlightf("gamefed ⚡")
 	defer log.Highlightf("gamefed 👻")
+
+	run()
 }
