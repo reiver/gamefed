@@ -63,9 +63,14 @@ func GameBootURL() string {
 }
 
 func GameAcctUserName() string {
-	return bootStrap.Game.Acct.UserName.GetElse("")
+	return bootStrap.Game.Acct.UserName.GetElse("fedigame")
 }
 
 func GameTags() pckstr.PackedStrings {
-	return bootStrap.Game.Tags
+	tags := bootStrap.Game.Tags
+	if tags.IsNothing() {
+		return pckstr.SomeString("PlayFedi")
+	}
+
+	return tags
 }
