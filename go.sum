@@ -2,6 +2,8 @@ codeberg.org/reiver/go-accturi v0.0.0-20260228212744-2bfbf7eb4058 h1:UNYegyKArTT
 codeberg.org/reiver/go-accturi v0.0.0-20260228212744-2bfbf7eb4058/go.mod h1:OZ7chNN9ge70xMgYjNieM9ktiFrymgkVKL8MizxIbAQ=
 codeberg.org/reiver/go-ansicolor v0.0.0-20251210134648-774252d78153 h1:/qSBaF4Djq1BHw+MxLbO9mCSFL+aYKkRcnXc3J9L5Bc=
 codeberg.org/reiver/go-ansicolor v0.0.0-20251210134648-774252d78153/go.mod h1:AVMt1Ycjgd1219qBwA/+WtsI862FEQWAj7x3tfSE6WQ=
+codeberg.org/reiver/go-ascii v0.0.0-20250831011101-29ac37bfb987 h1:8f7cz3PdXP+F2AVqYcWnodS3PPG2gEFvuJ4wPj1kv4s=
+codeberg.org/reiver/go-ascii v0.0.0-20250831011101-29ac37bfb987/go.mod h1:GuoN8yLT3H0D+0rswq8A+6sQF99w/HvueBMU3n4IPk4=
 codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c h1:Et1ktanrSY+NNy9KKRMlJVLAGu2XEHBsiKSqEMAUVkQ=
 codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c/go.mod h1:LI+4NJ8AIMMfGwLciKKECotS8gpug2KxYMsJoPdeps0=
 codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac h1:Rf1Y1tEmk+jU/ePubSv5KSkb7smImaDH7ZAff2TEy80=
@@ -44,6 +46,8 @@ github.com/reiver/go-pathmatch v1.0.1-0.20240802004530-0dc31d85afa8 h1:3mxWa4FEL
 github.com/reiver/go-pathmatch v1.0.1-0.20240802004530-0dc31d85afa8/go.mod h1:SveMAOrJP7XCL3UlazOjQdKNCGG2T/E1zE6gDHfs3cA=
 github.com/reiver/go-pathmux v0.0.0-20260303220105-af405f418851 h1:tiPliGFC8ys1X9vqTTOmn90Rr6c2V6GhXNL3JBHkxKs=
 github.com/reiver/go-pathmux v0.0.0-20260303220105-af405f418851/go.mod h1:skftYndyTOU0cNVp491NSoiBJj96eABC2i8ipPVqRYU=
+github.com/reiver/go-pckstr v0.0.0-20260425220659-60660d07c451 h1:qbhaYK3YedTMtmGQeTIresf1IjD7RYsaNG4t8anqiiM=
+github.com/reiver/go-pckstr v0.0.0-20260425220659-60660d07c451/go.mod h1:Ntz1C3qY9mCVE6zQXJZH1iEWV/a4avdNUU74yGvR3jE=
 github.com/reiver/go-rfc2234 v0.0.0-20240824134608-874192441e79 h1:DRNqoxS6b5TLHKjX5hE6PSL2b0GqlMiw5Vh4ct7oIYs=
 github.com/reiver/go-rfc2234 v0.0.0-20240824134608-874192441e79/go.mod h1:ukK719h1pqMMWmCcBwHnBCcY2lRYnnBpWljt3Ek4QDs=
 github.com/reiver/go-rfc3986 v0.0.0-20250715210429-fb2d5b78e44d h1:PqUUSx1GB5m16w96AI4C29Rz4n4vXk4N+Dr45Hqs1UM=

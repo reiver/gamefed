@@ -1,10 +1,11 @@
 module gamefed
 
-go 1.25.4
+go 1.26.1
 
 require (
 	codeberg.org/reiver/go-accturi v0.0.0-20260228212744-2bfbf7eb4058
 	codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c
+	codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac
 	codeberg.org/reiver/go-field v0.0.0-20260414030601-d901062f0b09
 	codeberg.org/reiver/go-log v0.0.0-20260414215004-323f70612648
 	codeberg.org/reiver/go-webfinger v0.0.0-20250820134928-2b92f35f4d2e
@@ -13,11 +14,12 @@ require (
 	github.com/reiver/go-http500 v0.0.0-20250531141625-af98f83e19aa
 	github.com/reiver/go-opt v0.0.0-20260410151028-cc34d487e508
 	github.com/reiver/go-pathmux v0.0.0-20260303220105-af405f418851
+	github.com/reiver/go-pckstr v0.0.0-20260425220659-60660d07c451
 )
 
 require (
 	codeberg.org/reiver/go-ansicolor v0.0.0-20251210134648-774252d78153 // indirect
-	codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac // indirect
+	codeberg.org/reiver/go-ascii v0.0.0-20250831011101-29ac37bfb987 // indirect
 	codeberg.org/reiver/go-plan v0.0.0-20251205233422-898ceb8a386b // indirect
 	codeberg.org/reiver/go-strparse v0.0.0-20260413055629-df7d67b5ed29 // indirect
 	github.com/reiver/go-calltrace v0.0.0-20251216205616-3931a8c7b154 // indirect
