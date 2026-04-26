@@ -58,10 +58,10 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 	}
 	log.Trace(field.String("place-id", placeID))
 
-	var place placesrv.Place
+	var gamePlace placesrv.Place
 	{
 		var found bool
-		place, found = placesrv.Get(placeID)
+		gamePlace, found = placesrv.Get(placeID)
 
 		if !found {
 			log.Warn(
@@ -71,14 +71,31 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			http404.NotFound(responseWriter, request.HTTPRequest())
 			return
 		}
+
+		log.Trace(field.Any("game-place", gamePlace))
+	}
+
+	var question asns.Question
+	{
+		var host string = request.HTTPRequest().Host
+
+		for _, option := range gamePlace.Options {
+			var note = asns.Note{
+				Name: opt.Something(option.Description),
+				URL: opt.Something(librefs.Place(host, option.PlaceID)),
+			}
+
+			question.OneOf = append(question.OneOf, note)
+		}
+
 	}
 
 	{
 		var host string = request.HTTPRequest().Host
 
 		var (
-			name    opt.Optional[string] = opt.Something(place.Name)
-			summary nul.Nullable[string] = nul.Something(place.Description)
+			name    opt.Optional[string] = opt.Something(gamePlace.Name)
+			summary nul.Nullable[string] = nul.Something(gamePlace.Description)
 		)
 
 		var place = asns.Place{
@@ -87,6 +104,7 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			Name:    name,
 			Summary: summary,
 		}
+		place.Attachments = append(place.Attachments, question)
 
 		bytes, err := asns.Marshal(place)
 		if nil != err {
