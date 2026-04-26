@@ -105,17 +105,17 @@ func serveActorHost(resource string, actor string, host string) ([]byte, error) 
 	//				"href" : "https://host.example/gozaar/something",
 	//			},
 	//			{
-	//				"rel"  : "https://www.w3.org/TR/activitypub/#inbox",
+	//				"rel"  : "https://www.w3.org/ns/activitystreams#inbox",
 	//				"type" : "application/activity+json",
 	//				"href" : "https://host.example/gozaar/something/inbox",
 	//			},
 	//			{
-	//				"rel"  : "https://www.w3.org/TR/activitypub/#sharedInbox",
+	//				"rel"  : "https://www.w3.org/ns/activitystreams#sharedInbox",
 	//				"type" : "application/activity+json",
 	//				"href" : "https://host.example/inbox",
 	//			},
 	//			{
-	//				"rel"  : "https://www.w3.org/TR/activitypub/#outbox",
+	//				"rel"  : "https://www.w3.org/ns/activitystreams#outbox",
 	//				"type" : "application/activity+json",
 	//				"href" : "https://host.example/gozaar/something/outbox",
 	//			}
@@ -134,17 +134,17 @@ func serveActorHost(resource string, actor string, host string) ([]byte, error) 
 					HRef: opt.Something(self),
 				},
 				webfinger.Link{
-					Rel:  opt.Something("https://www.w3.org/TR/activitypub/#inbox"),
+					Rel:  opt.Something("https://www.w3.org/ns/activitystreams#inbox"),
 					Type: opt.Something("application/activity+json"),
 					HRef: opt.Something(inbox),
 				},
 				webfinger.Link{
-					Rel:  opt.Something("https://www.w3.org/TR/activitypub/#sharedInbox"),
+					Rel:  opt.Something("https://www.w3.org/ns/activitystreams#sharedInbox"),
 					Type: opt.Something("application/activity+json"),
 					HRef: opt.Something(inboxShared),
 				},
 				webfinger.Link{
-					Rel:  opt.Something("https://www.w3.org/TR/activitypub/#outbox"),
+					Rel:  opt.Something("https://www.w3.org/ns/activitystreams#outbox"),
 					Type: opt.Something("application/activity+json"),
 					HRef: opt.Something(outbox),
 				},
