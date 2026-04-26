@@ -14,6 +14,7 @@ import (
 	"github.com/reiver/go-opt"
 	"github.com/reiver/go-pathmux"
 
+	"gamefed/cfg"
 	"gamefed/lib/refs"
 	"gamefed/srv/http"
 	"gamefed/srv/log"
@@ -75,6 +76,22 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 		log.Trace(field.Any("game-place", gamePlace))
 	}
 
+	var tags []asns.ProtoObjectOrProtoLink
+	{
+		for _, tag := range cfg.GameTags().Strings() {
+			if "" == tag {
+				continue
+			}
+
+			var hashtag = asns.HashTag{
+				//HRef: ???,
+				Name: opt.Something("#"+tag),
+			}
+
+			tags = append(tags, hashtag)
+		}
+	}
+
 	var question asns.Question
 	{
 		var host string = request.HTTPRequest().Host
@@ -105,6 +122,7 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			Summary: summary,
 		}
 		place.Attachments = append(place.Attachments, question)
+		place.Tags = append(place.Tags, tags...)
 
 		bytes, err := asns.Marshal(place)
 		if nil != err {

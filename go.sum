@@ -4,8 +4,8 @@ codeberg.org/reiver/go-ansicolor v0.0.0-20251210134648-774252d78153 h1:/qSBaF4Dj
 codeberg.org/reiver/go-ansicolor v0.0.0-20251210134648-774252d78153/go.mod h1:AVMt1Ycjgd1219qBwA/+WtsI862FEQWAj7x3tfSE6WQ=
 codeberg.org/reiver/go-ascii v0.0.0-20250831011101-29ac37bfb987 h1:8f7cz3PdXP+F2AVqYcWnodS3PPG2gEFvuJ4wPj1kv4s=
 codeberg.org/reiver/go-ascii v0.0.0-20250831011101-29ac37bfb987/go.mod h1:GuoN8yLT3H0D+0rswq8A+6sQF99w/HvueBMU3n4IPk4=
-codeberg.org/reiver/go-asns v0.0.0-20260426052756-abff01eb0ca6 h1:xOjFT60iBxe/I52lTyxhVFClihR5JSTLOIaKf7UddqU=
-codeberg.org/reiver/go-asns v0.0.0-20260426052756-abff01eb0ca6/go.mod h1:A66y2iuZpPx0yukXgcSna2QYRpP05AJajgFwo3VX0x4=
+codeberg.org/reiver/go-asns v0.0.0-20260426062001-42ba85788dc2 h1:Hm1OF8mXmadyQlC8maIQndRs+aMDaxRnJrx71h3gueQ=
+codeberg.org/reiver/go-asns v0.0.0-20260426062001-42ba85788dc2/go.mod h1:A66y2iuZpPx0yukXgcSna2QYRpP05AJajgFwo3VX0x4=
 codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c h1:Et1ktanrSY+NNy9KKRMlJVLAGu2XEHBsiKSqEMAUVkQ=
 codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c/go.mod h1:LI+4NJ8AIMMfGwLciKKECotS8gpug2KxYMsJoPdeps0=
 codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac h1:Rf1Y1tEmk+jU/ePubSv5KSkb7smImaDH7ZAff2TEy80=
