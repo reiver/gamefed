@@ -66,6 +66,11 @@ func GameAcctUserName() string {
 	return bootStrap.Game.Acct.UserName.GetElse("fedigame")
 }
 
+func GamePlace(placeID string) (boot.Place, bool) {
+	place, found := bootStrap.Game.Places[placeID]
+	return place, found
+}
+
 func GameTags() pckstr.PackedStrings {
 	tags := bootStrap.Game.Tags
 	if tags.IsNothing() {

@@ -4,7 +4,7 @@ go 1.26.1
 
 require (
 	codeberg.org/reiver/go-accturi v0.0.0-20260228212744-2bfbf7eb4058
-	codeberg.org/reiver/go-asns v0.0.0-20260426031252-508de5daa453
+	codeberg.org/reiver/go-asns v0.0.0-20260426035637-6e65a7c8e83c
 	codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c
 	codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac
 	codeberg.org/reiver/go-field v0.0.0-20260414030601-d901062f0b09

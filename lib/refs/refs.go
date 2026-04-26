@@ -5,14 +5,17 @@ import (
 )
 
 // gozaar (noun): one who carries out / performs / executes
-const PathPrefix string = "/gozaar/"
+const (
+	ActorPathPrefix string = "/gozaar/"
+	PlacePathPrefix string = "/jaa/"
+)
 
 func Actor(host string, actor string) string {
 	var url = gourl.URL{
 		Scheme: "https",
 		Host:   host,
 //@TODO: make the path join safer.
-		Path:   PathPrefix + actor,
+		Path:   ActorPathPrefix + actor,
 	}
 
 	return url.String()
@@ -26,6 +29,17 @@ func ActorInBox(host string, actor string) string {
 func ActorOutBox(host string, actor string) string {
 //@TODO: make the path join safer.
 	return Actor(host, actor) + "/outbox"
+}
+
+func Place(host string, placeID string) string {
+	var url = gourl.URL{
+		Scheme: "https",
+		Host:   host,
+//@TODO: make the path join safer.
+		Path:   PlacePathPrefix + placeID,
+	}
+
+	return url.String()
 }
 
 func SharedInBox(host string) string {
