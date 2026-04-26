@@ -4,4 +4,4 @@
 
 ## Author
 
-Software **tmpfed** was written by [Charles Iliya Krempeaux](http://reiver.link)
+Software **gamefed** was written by [Charles Iliya Krempeaux](http://reiver.link)
