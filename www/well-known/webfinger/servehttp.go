@@ -14,7 +14,7 @@ import (
 	"github.com/reiver/go-opt"
 
 	"gamefed/lib/refs"
-	"gamefed/srv/actors"
+	"gamefed/srv/actor"
 	"gamefed/srv/http"
 	"gamefed/srv/log"
 )
@@ -68,7 +68,7 @@ func serveActorHost(resource string, actor string, host string) ([]byte, error) 
 		field.String("host", host),
 	)
 
-	if !actorssrv.ExistsByUserName(actor) {
+	if !actorsrv.ExistsByUserName(actor) {
 		return nil, errhttp.Return(http.StatusNotFound)
 	}
 

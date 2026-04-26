@@ -1,4 +1,4 @@
-package actorssrv
+package actorsrv
 
 import (
 	"gamefed/cfg"
