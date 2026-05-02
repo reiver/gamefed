@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"codeberg.org/reiver/go-asns"
+	"codeberg.org/reiver/go-activitypub"
 	"codeberg.org/reiver/go-field"
 	"github.com/reiver/go-http404"
 	"github.com/reiver/go-http500"
@@ -76,31 +76,29 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 		log.Trace(field.Any("game-place", gamePlace))
 	}
 
-	var tags []asns.ProtoObjectOrProtoLink
+	var tags []activitypub.ProtoObjectOrProtoLink
 	{
 		for _, tag := range cfg.GameTags().Strings() {
 			if "" == tag {
 				continue
 			}
 
-			var hashtag = asns.HashTag{
-				//HRef: ???,
-				Name: opt.Something("#"+tag),
-			}
+			var hashtag activitypub.HashTag
+			//@TODO: hashtag.HRef = ???
+			hashtag.Name = opt.Something("#"+tag)
 
 			tags = append(tags, hashtag)
 		}
 	}
 
-	var question asns.Question
+	var question activitypub.Question
 	{
 		var host string = request.HTTPRequest().Host
 
 		for _, option := range gamePlace.Options {
-			var note = asns.Note{
-				Name: opt.Something(option.Description),
-				URL: opt.Something(librefs.Place(host, option.PlaceID)),
-			}
+			var note activitypub.Note
+			note.Name = opt.Something(option.Description)
+			note.URL  = opt.Something(librefs.Place(host, option.PlaceID))
 
 			question.OneOf = append(question.OneOf, note)
 		}
@@ -115,16 +113,14 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			summary nul.Nullable[string] = nul.Something(gamePlace.Description)
 		)
 
-		var place = asns.Place{
-			ID: opt.Something(librefs.Place(host, placeID)),
-
-			Name:    name,
-			Summary: summary,
-		}
+		var place activitypub.Place
+		place.ID          = opt.Something(librefs.Place(host, placeID))
+		place.Name        = name
+		place.Summary     = summary
 		place.Attachments = append(place.Attachments, question)
-		place.Tags = append(place.Tags, tags...)
+		place.Tags        = append(place.Tags, tags...)
 
-		bytes, err := asns.Marshal(place)
+		bytes, err := activitypub.Marshal(place)
 		if nil != err {
 			http500.InternalServerError(responseWriter, request.HTTPRequest())
 			log.Error(
@@ -134,6 +130,6 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			return
 		}
 
-		asns.ServeHTTP(responseWriter, request.HTTPRequest(), bytes)
+		activitypub.ServeHTTP(responseWriter, request.HTTPRequest(), bytes)
 	}
 }

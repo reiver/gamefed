@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"codeberg.org/reiver/go-asns"
+	"codeberg.org/reiver/go-activitypub"
 	"codeberg.org/reiver/go-field"
 	"github.com/reiver/go-http404"
 	"github.com/reiver/go-http500"
@@ -75,20 +75,17 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			summary nul.Nullable[string] = nul.Something("Shall we play a game?")
 		)
 
-		var application = asns.Application{
-			ID: opt.Something(librefs.Actor(host, actorName)),
-
-			Name:    name,
-			Summary: summary,
-
-			EndPoints: asns.EndPoints{
-				SharedInBox: opt.Something(librefs.SharedInBox(host)),
-			},
-			InBox:  opt.Something(librefs.ActorInBox(host, actorName)),
-			OutBox: opt.Something(librefs.ActorOutBox(host, actorName)),
+		var application activitypub.Application
+		application.ID        = opt.Something(librefs.Actor(host, actorName))
+		application.Name      = name
+		application.Summary   = summary
+		application.InBox     =  opt.Something(librefs.ActorInBox(host, actorName))
+		application.OutBox    = opt.Something(librefs.ActorOutBox(host, actorName))
+		application.EndPoints = activitypub.EndPoints{
+			SharedInBox: opt.Something(librefs.SharedInBox(host)),
 		}
 
-		bytes, err := asns.Marshal(application)
+		bytes, err := activitypub.Marshal(application)
 		if nil != err {
 			http500.InternalServerError(responseWriter, request.HTTPRequest())
 			log.Error(
@@ -98,6 +95,6 @@ func serveHTTP(responseWriter http.ResponseWriter, request *pathmux.Parameterize
 			return
 		}
 
-		asns.ServeHTTP(responseWriter, request.HTTPRequest(), bytes)
+		activitypub.ServeHTTP(responseWriter, request.HTTPRequest(), bytes)
 	}
 }

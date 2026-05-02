@@ -4,7 +4,7 @@ go 1.26.1
 
 require (
 	codeberg.org/reiver/go-accturi v0.0.0-20260228212744-2bfbf7eb4058
-	codeberg.org/reiver/go-asns v0.0.0-20260426062001-42ba85788dc2
+	codeberg.org/reiver/go-activitypub v0.0.0-20260502180123-94334d4ab962
 	codeberg.org/reiver/go-env v0.0.0-20260413055738-10e4063a459c
 	codeberg.org/reiver/go-erorr v0.0.0-20260414214747-7b76f85a93ac
 	codeberg.org/reiver/go-field v0.0.0-20260414030601-d901062f0b09
@@ -28,8 +28,8 @@ require (
 	github.com/reiver/go-calltrace v0.0.0-20251216205616-3931a8c7b154 // indirect
 	github.com/reiver/go-erorr v0.0.0-20240801233437-8cbde6d1fa3f // indirect
 	github.com/reiver/go-iri v0.0.0-20260228082703-3742ee4a9c2d // indirect
-	github.com/reiver/go-json v0.0.0-20260306160333-8285682dd9de // indirect
-	github.com/reiver/go-jsonld v0.0.0-20250611053742-8fec84a9f5f8 // indirect
+	github.com/reiver/go-json v0.0.0-20260502054102-0a3481c07116 // indirect
+	github.com/reiver/go-jsonld v0.0.0-20260502175956-7e66110fb725 // indirect
 	github.com/reiver/go-lck v0.0.0-20250904175207-b06db1642fd1 // indirect
 	github.com/reiver/go-path v0.0.0-20240327181650-5f2ee05890d8 // indirect
 	github.com/reiver/go-pathmatch v1.0.1-0.20240802004530-0dc31d85afa8 // indirect
